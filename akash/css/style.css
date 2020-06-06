@@ -1,14 +1,3 @@
-/*==================================
-* Author        : "ThemeSine"
-* Template Name :  Browny  HTML Template
-* Version       : 1.0
-==================================== */
-
-/*==================================
-font-family: 'Poppins', sans-serif;
-==================================== */
-
-
 /*=========== TABLE OF CONTENTS ===========
 1.  General css (Reset code)
 2.  Header
@@ -190,7 +179,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #a71919;}
     align-items: center;
     justify-content: center;
     position:relative;
-    background:url(../images/about.svg)no-repeat;
+    background:url(./akash/images/about.svg)no-repeat;
     background-size:cover;
     background-position: center;
     height:890px;
