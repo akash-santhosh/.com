@@ -41,12 +41,53 @@
     <link rel="stylesheet" href="akash/css/style.css">
     <link rel="stylesheet" href="akash/css/responsive.css">
     <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+
+    <!-- Lightweight UI polish for Skills & Certifications -->
     <style>
-      /* Debian gradient for small labels if you want it later */
-      .debian-gradient {
+      /* Section header accent (Debian gradient) */
+      .section-heading h2 {
+        font-weight: 700;
+        letter-spacing: .04em;
+        margin-bottom: 1.25rem;
         background: linear-gradient(90deg, #D70A53 0%, #A80030 100%);
         -webkit-background-clip: text; background-clip: text; color: transparent;
-        letter-spacing: .1em; font-weight: 600; text-transform: uppercase; font-size: .85rem;
+      }
+      .muted-sub { color:#bdbdbd; font-size:.95rem; }
+
+      /* Skill pills */
+      .skill-pill {
+        display:inline-flex; align-items:center; gap:.5rem;
+        padding:.55rem .9rem; border-radius:999px;
+        border:1px solid rgba(255,255,255,.08);
+        background: rgba(255,255,255,.04);
+        color:#e6e6e6; font-weight:500; margin:.35rem;
+        transition:transform .15s ease, background .15s ease, border-color .15s ease;
+        white-space:nowrap;
+      }
+      .skill-pill i { opacity:.9; font-size:.95rem; }
+      .skill-pill:hover { transform:translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
+
+      /* Cards for certifications */
+      .cert-card {
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:16px;
+        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        padding:1.25rem; height:100%;
+        transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      }
+      .cert-card:hover { transform:translateY(-3px); border-color: rgba(255,255,255,.16); box-shadow:0 8px 24px rgba(0,0,0,.25); }
+      .cert-icon {
+        width:44px; height:44px; border-radius:999px;
+        display:inline-flex; align-items:center; justify-content:center;
+        background: rgba(215,10,83,.12);
+        color:#ff4d88; margin-right:.65rem;
+      }
+      .cert-title { color:#fff; font-weight:600; margin:0; }
+      .cert-meta { color:#bdbdbd; margin:0; font-size:.95rem; }
+
+      /* Tighter section spacing on mobile */
+      @media (max-width: 576px) {
+        .skill-pill { margin:.28rem; padding:.5rem .8rem; }
       }
     </style>
   </head>
@@ -205,26 +246,32 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- SKILLS (Redesigned) -->
     <section id="skills" class="skills">
       <div class="skill-content">
         <div class="section-heading text-center">
           <h2>skills</h2>
+          <p class="muted-sub">What I’m comfortable working with today</p>
         </div>
+
         <div class="container">
-          <div class="row">
-            <div class="col-md-6 text-center">
-              <div class="single-skill-content">
-                <div class="barWrapper"><span class="progressText">System Administration</span></div>
-                <div class="barWrapper"><span class="progressText">Cybersecurity &amp; Privacy</span></div>
-                <div class="barWrapper"><span class="progressText">Network Engineering</span></div>
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+              <!-- Primary skills -->
+              <div class="mb-4">
+                <span class="skill-pill"><i class="fa fa-linux"></i> Linux &amp; System Administration</span>
+                <span class="skill-pill"><i class="fa fa-plug"></i> Networking (routing, switching, VPN)</span>
+                <span class="skill-pill"><i class="fa fa-lock"></i> Security (hardening, access control, TLS)</span>
+                <span class="skill-pill"><i class="fa fa-cloud"></i> Cloud Fundamentals</span>
+                <span class="skill-pill"><i class="fa fa-cubes"></i> Containers &amp; Automation</span>
+                <span class="skill-pill"><i class="fa fa-wifi"></i> Radio &amp; Wireless</span>
               </div>
-            </div>
-            <div class="col-md-6 text-center">
-              <div class="single-skill-content">
-                <div class="barWrapper"><span class="progressText">Cloud Fundamentals</span></div>
-                <div class="barWrapper"><span class="progressText">Automation &amp; Containers</span></div>
-                <div class="barWrapper"><span class="progressText">Radio &amp; Wireless</span></div>
+
+              <!-- Secondary skills -->
+              <div>
+                <span class="skill-pill"><i class="fa fa-terminal"></i> Bash</span>
+                <span class="skill-pill"><i class="fa fa-code"></i> Git &amp; CI basics</span>
+                <span class="skill-pill"><i class="fa fa-shield"></i> Privacy basics</span>
               </div>
             </div>
           </div><!-- /.row -->
@@ -232,20 +279,34 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
+    <!-- CERTIFICATIONS (Redesigned) -->
     <section id="certifications" class="education">
       <div class="section-heading text-center">
         <h2>certifications</h2>
+        <p class="muted-sub">Formal milestones I’ve completed or scheduled</p>
       </div>
       <div class="container">
-        <div class="row" style="max-width:900px;margin:0 auto;">
-          <div class="col-sm-12">
-            <ul style="list-style: disc; padding-left: 20px;">
-              <li>JNCIA</li>
-              <li>CCNA</li>
-            </ul>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="cert-card d-flex align-items-start">
+              <div class="cert-icon"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+              <div>
+                <h4 class="cert-title">JNCIA</h4>
+                <p class="cert-meta">Status: Completed</p>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <div class="col-md-6">
+            <div class="cert-card d-flex align-items-start">
+              <div class="cert-icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+              <div>
+                <h4 class="cert-title">CCNA</h4>
+                <p class="cert-meta">Status: Exam scheduled — September 2025</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
       </div>
     </section>
 
@@ -298,7 +359,7 @@
                         <div class="timeline-content">
                           <h4 class="title">
                             <span><i class="fa fa-circle" aria-hidden="true"></i></span>
-                            Chakolas Pavilion Hotels and Convention Centre
+                            Chakolas Pavilion Event Centre
                           </h4>
                           <h5>Kalamassery, Kerala</h5>
                           <p class="description">
